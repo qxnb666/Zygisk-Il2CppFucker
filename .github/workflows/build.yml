@@ -1,27 +1,27 @@
-name: Build
-on:
-  workflow_dispatch:
-      inputs:
-        package_name:
-          description: "Package name of the game:"
-          required: true
+姓名: 建立
+在……之上:
+workflow_dispatch:
+输入:
+package_name:
+描述: "游戏包名："
+必填: 正确
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 17
-        cache: gradle
-    - run: |
-        chmod +x ./gradlew
-        sed -i 's/moduleDescription = "/moduleDescription = "(${{ github.event.inputs.package_name }}) /g' module.gradle
-        sed -i "s/com.game.packagename/${{ github.event.inputs.package_name }}/g" module/src/main/cpp/game.h
-        ./gradlew :module:zipRelease
-    - uses: actions/upload-artifact@v4
-      with:
-        name: Il2CppFucker-${{ github.event.inputs.package_name }}
-        path: out/magisk_module_release/
+招聘:
+建立:
+连续的: Ubuntu-最新
+步骤:
+    - uses: 操作/结帐@v4
+    - uses: 操作/设置-Java@v4
+和……一起:
+分布: 子
+现在的 java版本和……一起: 
+缓存: Gradle
+    - 跑: |
+chmod+x./gradlew
+SED-i的/moduleDescription="/moduleDescription="(${{github.event.inputs.package_name}})/g'module.gradle
+SED-i"s/com。游戏。PackageName/${{github。事件。输入.包名称}/g"模块/src/main/cpp/Game.h
+./gradlew：模块：zipRelease
+    - uses: 操作/上载工件@v4
+和……一起out/magisk_module_release/
+        name: Il2CppFucker-${{github.event.inputs.package_name}}
+路径: /storage/emulated/0/腊肠派对/
