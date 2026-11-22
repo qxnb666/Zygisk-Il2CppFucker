@@ -15,7 +15,7 @@ package_name:
 和……一起:
 分布: 子
 现在的 java版本和……一起: 
-缓存: Gradle
+缓存: G拉德尔
     - 跑: |
 chmod+x./gradlew
 SED-i的/moduleDescription="/moduleDescription="(${{github.event.inputs.package_name}})/g'module.gradle
@@ -23,5 +23,5 @@ SED-i"s/com。游戏。PackageName/${{github。事件。输入.包名称}/g"模�
 ./gradlew：模块：zipRelease
     - uses: 操作/上载工件@v4
 和……一起out/magisk_module_release/
-        name: Il2CppFucker-${{github.event.inputs.package_name}}
-路径: /storage/emulated/0/腊肠派对/
+姓名: Il2CppFucker-${{github.event.inputs.package_name}}
+路径: /storage/emulated/0/Download/
