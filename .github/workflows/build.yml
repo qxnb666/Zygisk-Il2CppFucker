@@ -18,7 +18,7 @@ package_name:
 缓存: G拉德尔
     - 跑: |
 chmod+x./gradlew
-SED-i的/moduleDescription="/moduleDescription="(${{github.event.inputs.package_name}})/g'module.gradle
+SED-i的/moduleDescription=uses(${{github.event.inputs.package_name}})/g'module.gradle
 SED-i"s/com。游戏。PackageName/${{github。事件。输入.包名称}/g"模块/src/main/cpp/Game.h
 ./gradlew：模块：zipRelease
     - uses: 操作/上载工件@v4
